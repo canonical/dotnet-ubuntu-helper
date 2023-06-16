@@ -1,0 +1,32 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <OutputType>Exe</OutputType>
+    <TargetFramework>net7.0</TargetFramework>
+    <PublishSingleFile>true</PublishSingleFile>
+
+    <ImplicitUsings>enable</ImplicitUsings>
+    <Nullable>enable</Nullable>
+
+    <AssemblyName>DotnetUbuntuHelper.CommandLine</AssemblyName>
+    <RootNamespace>DotnetUbuntuHelper.CommandLine</RootNamespace>
+    
+    <Version>0.1.0</Version>
+    <Title>Dotnet Ubuntu Helper</Title>
+    <Description>A command line tool created for Ubuntu Developers, dedicated to enhancing productivity during the release of .NET packages to Ubuntu. This tool effectively tackles recurring tasks, making the package release process more efficient and streamlined.</Description>
+    <Copyright>AGPL-3.0-or-later</Copyright>
+    <PackageProjectUrl>https://github.com/canonical/dotnet-ubuntu-helper</PackageProjectUrl>
+    <PackageLicenseUrl>https://www.gnu.org/licenses/agpl-3.0.html</PackageLicenseUrl>
+    <RepositoryUrl>https://github.com/canonical/dotnet-ubuntu-helper</RepositoryUrl>
+    <RepositoryType>git</RepositoryType>
+  </PropertyGroup>
+  
+  <ItemGroup>
+    <ProjectReference Include="..\UseCases\UseCases.csproj" />
+  </ItemGroup>
+  
+  <ItemGroup>
+    <PackageReference Include="System.CommandLine" Version="2.0.0-beta4.22272.1" />
+  </ItemGroup>
+
+</Project>

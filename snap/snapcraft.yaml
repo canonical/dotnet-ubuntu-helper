@@ -1,0 +1,39 @@
+name: dotnet-ubuntu-helper
+version: '0.1.0'
+grade: devel
+summary: Developer command line tool that helps releasing .NET for Ubuntu
+description: |
+  A command line tool created for Ubuntu Developers, dedicated to enhancing
+  productivity during the release of .NET packages to Ubuntu. This tool 
+  effectively tackles recurring tasks, making the package release process 
+  more efficient and streamlined.
+license: AGPL-3.0-or-later
+contact: dominik.viererbe@canonical.com
+issues: https://github.com/canonical/dotnet-ubuntu-helper/issues
+source-code: https://github.com/canonical/dotnet-ubuntu-helper
+
+base: core22
+architectures:
+  - build-on: amd64
+
+confinement: strict
+
+parts:
+  cli:
+    plugin: dotnet
+    dotnet-build-configuration: Release
+    dotnet-self-contained-runtime-identifier: linux-x64
+    source: src/CommandLine
+    build-packages:
+      - dotnet-sdk-7.0
+    stage-packages:
+      - libicu70
+
+apps:
+  duh:
+    command: DotnetUbuntuHelper.CommandLine
+
+lint:
+  ignore:
+    - classic 
+    - library
